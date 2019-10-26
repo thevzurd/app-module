@@ -1,5 +1,8 @@
 import 'dart:io' show Directory;
 
+// TODO(FlutterDevelopers): Import modules here
+import 'package:com.winwisely99.news/news.dart';
+
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:repository/repository.dart';
@@ -23,12 +26,16 @@ Future<void> initializeHive() async {
     // App module
     ..registerAdapter(IdAdapter<User>(), 0)
     ..registerAdapter(IdAdapter<StorageData>(), 1)
+    // News Module
+    ..registerAdapter(IdAdapter<News>(), 2)
     // TODO(FlutterDevelopers): Register the adapter generated in data.g here
     // with a unique typeID. Do not change the typeID.
     //
     // App module
     ..registerAdapter(UserAdapter(), 6)
-    ..registerAdapter(StorageDataAdapter(), 7);
+    ..registerAdapter(StorageDataAdapter(), 7)
+    // News Module
+    ..registerAdapter(NewsAdapter(), 8);
 }
 
 class IdAdapter<T> extends TypeAdapter<Id<T>> {

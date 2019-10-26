@@ -16,7 +16,8 @@ class SplashScreen extends StatelessWidget {
       await userServiceReady;
       // TODO(Vineeth): Add the authentication logic here
       await authUserReady;
-      Navigator.of(context).pushReplacementNamed('/');
+      Navigator.of(context)
+          .pushNamedAndRemoveUntil('/news', ModalRoute.withName('/'));
     });
 
     return Container(

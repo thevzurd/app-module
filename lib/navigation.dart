@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 // TODO(FlutterDevelopers): Import modules here
+import 'package:com.winwisely99.news/news.dart';
 
 import 'app/app.dart';
 
@@ -7,20 +8,24 @@ Route<dynamic> routes(RouteSettings settings) {
   MaterialPageRoute<dynamic> _route;
   // TODO(FlutterDevelopers): Add the path to module as a 'case'
   switch (settings.name) {
-    case '/':
+    case '/news':
       _route = MaterialPageRoute<dynamic>(
         builder: (BuildContext context) {
-          return Scaffold(
+          return NewsFeed(
+            key: ValueKey<String>(settings.name),
+          );
+
+/*           return Scaffold(
             key: ValueKey<String>(settings.name),
             appBar: AppBar(title: const Text('First Page')),
             body: Center(
               child: const Text('Page'),
             ),
-          );
+          ); */
         },
       );
       break;
-    case '/splash':
+    case '/':
       _route = MaterialPageRoute<dynamic>(
         builder: (BuildContext context) {
           return SplashScreen(
@@ -37,7 +42,7 @@ Route<dynamic> routes(RouteSettings settings) {
         default:
           _route = MaterialPageRoute<dynamic>(
             builder: (BuildContext context) {
-              return SplashScreen(
+              return NewsFeed(
                 key: ValueKey<String>(settings.name),
               );
             },

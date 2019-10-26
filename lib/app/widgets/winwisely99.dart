@@ -6,7 +6,7 @@ class WinWisely99 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WinWisely99',
-      initialRoute: '/splash',
+      initialRoute: '/',
       onGenerateRoute: routes,
     );
   }
