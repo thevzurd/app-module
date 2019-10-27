@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../navigation.dart';
+import '../services/navigation.dart';
 
 class WinWisely99 extends StatelessWidget {
   @override
