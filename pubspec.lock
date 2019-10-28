@@ -120,13 +120,31 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.11"
+  "com.winwisely99.chat":
+    dependency: "direct dev"
+    description:
+      path: chatmodule
+      ref: master
+      resolved-ref: "75beb667e318a03564045e28c0e090da35329aab"
+      url: "https://github.com/winwisely99/chat-module.git"
+    source: git
+    version: "1.0.0+1"
   "com.winwisely99.news":
     dependency: "direct dev"
     description:
       path: "."
       ref: master
-      resolved-ref: "47f7bea79d1a68f7eda45e70226ad4c6e4785e55"
+      resolved-ref: "9a28b8b4a94f8467f6cc8ceadf9f9d31d3c6a52d"
       url: "https://github.com/winwisely99/mod-new.git"
+    source: git
+    version: "0.0.1"
+  "com.winwisely99.services":
+    dependency: "direct dev"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "3c5fa4aa917f056cfb0c8db7da7f75b4fbb44a8a"
+      url: "https://github.com/winwisely99/services.git"
     source: git
     version: "0.0.1"
   convert:

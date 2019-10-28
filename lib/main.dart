@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app/app.dart';
+import 'services_provider.dart';
 
 void main() {
   runApp(ServicesProvider());

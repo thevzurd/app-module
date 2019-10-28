@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
 // TODO(FlutterDevelopers): Import modules here
 import 'package:com.winwisely99.news/news.dart';
-
-import 'app/app.dart';
+import 'package:com.winwisely99.chat/chat_view.dart';
+import 'package:com.winwisely99.chat/conversations.dart';
+import 'package:com.winwisely99.services/services.dart';
 
 Route<dynamic> routes(RouteSettings settings) {
   MaterialPageRoute<dynamic> _route;
   // TODO(FlutterDevelopers): Add the path to module as a 'case'
   switch (settings.name) {
+    case '/':
+      _route = MaterialPageRoute<dynamic>(
+        builder: (BuildContext context) {
+          return SplashScreen(
+            key: ValueKey<String>(settings.name),
+          );
+        },
+      );
+      break;
     case '/news':
       _route = MaterialPageRoute<dynamic>(
         builder: (BuildContext context) {
           return NewsFeed(
             key: ValueKey<String>(settings.name),
           );
-
-/*           return Scaffold(
-            key: ValueKey<String>(settings.name),
-            appBar: AppBar(title: const Text('First Page')),
-            body: Center(
-              child: const Text('Page'),
-            ),
-          ); */
         },
       );
       break;
-    case '/':
+    case '/conversations':
       _route = MaterialPageRoute<dynamic>(
         builder: (BuildContext context) {
-          return SplashScreen(
+          return ConversationsFeed(
             key: ValueKey<String>(settings.name),
           );
         },
@@ -39,6 +41,19 @@ Route<dynamic> routes(RouteSettings settings) {
       // passed to the module
       final List<String> info = settings.name.split('/');
       switch (info[1]) {
+        case 'chatfeed':
+          // /chatfeed/{conversationID}
+          _route = MaterialPageRoute<dynamic>(
+            settings: settings,
+            builder: (BuildContext context) {
+              return ChatFeed(
+                key: ValueKey<String>(settings.name),
+                conversationsId: info[2],
+                //         user: ,
+              );
+            },
+          );
+          break;
         default:
           _route = MaterialPageRoute<dynamic>(
             builder: (BuildContext context) {

@@ -6,7 +6,10 @@ import 'package:com.winwisely99.news/news.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:repository/repository.dart';
-import 'app/app.dart';
+
+import 'package:com.winwisely99.chat/chat_view.dart';
+import 'package:com.winwisely99.chat/conversations.dart';
+import 'package:com.winwisely99.services/services.dart';
 
 bool _isHiveInitialized = false;
 
@@ -28,12 +31,22 @@ Future<void> initializeHive() async {
     ..registerAdapter(IdAdapter<StorageData>(), 1)
     // News Module
     ..registerAdapter(IdAdapter<News>(), 2)
+    // conversations module
+    ..registerAdapter(IdAdapter<Conversations>(), 3)
+    // chat_view module
+    ..registerAdapter(IdAdapter<AttachmentType>(), 4)
+    ..registerAdapter(IdAdapter<Chat>(), 5)
     // TODO(FlutterDevelopers): Register the adapter generated in data.g here
     // with a unique typeID. Do not change the typeID.
     //
     // App module
     ..registerAdapter(UserAdapter(), 6)
     ..registerAdapter(StorageDataAdapter(), 7)
+    // conversations module
+    ..registerAdapter(ConversationsAdapter(), 9)
+    // chat_view module
+    ..registerAdapter(AttachmentTypeAdapter(), 10)
+    ..registerAdapter(ChatAdapter(), 11)
     // News Module
     ..registerAdapter(NewsAdapter(), 8);
 }

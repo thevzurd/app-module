@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../hive.dart';
-import '../app.dart';
+import 'package:com.winwisely99.services/services.dart';
+import 'hive.dart';
+import 'navigation.dart';
 
 class ServicesProvider extends StatelessWidget {
   @override
@@ -64,7 +65,11 @@ class ServicesProvider extends StatelessWidget {
               authUser?.dispose(),
         ),
       ],
-      child: WinWisely99(),
+      child: MaterialApp(
+        title: 'WinWisely99',
+        initialRoute: '/',
+        onGenerateRoute: routes,
+      ),
     );
   }
 }
