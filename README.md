@@ -1,13 +1,14 @@
 # App Module for WinWisely99 Project
 ## 1. Raison d'être
 This module acts as the central initiating module for all the other modules in the project. It consists of the following files:
-| File | Function | 
-|------|----------|
+
+|File|Function|
+|:------ |:----------|
 |`main`| Initiates the app for mobile platforms|
 |`main_desktop`| Initiates the app for desktop platforms|
 |`hive`| Intiates `Hive` instance with `adapter` required for this app|
 |`navigation`| Creates routes for app navigation. This will later serve as links for deep linking the app later|
-|`services_provider`| Initiates all the basic services required for the apps functioning. They are classes from `com.winwisely99.services` module.
+|`services_provider`| Initiates all the basic services required for the apps functioning. They are classes from `com.winwisely99.services` module.|
 ## 2. Instructions for Flutter Module Developers
 To include your module into the app, you need to proceed as per following insturctions.
 
